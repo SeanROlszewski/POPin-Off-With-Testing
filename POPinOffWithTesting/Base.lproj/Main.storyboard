@@ -29,13 +29,13 @@
         <!--Enter Email-->
         <scene sceneID="OEq-SY-EMO">
             <objects>
-                <viewController id="rca-8Y-uYZ" sceneMemberID="viewController">
+                <viewController id="rca-8Y-uYZ" customClass="AddEmailViewController" customModule="POPinOffWithTesting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tVI-1e-APO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pPQ-a2-4GH">
-                                <rect key="frame" x="10" y="384.5" width="394" height="127"/>
+                                <rect key="frame" x="10" y="336" width="394" height="224"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hvf-n5-BSx">
                                         <rect key="frame" x="10" y="0.0" width="374" height="60"/>
@@ -44,10 +44,22 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <connections>
+                                            <action selector="emailTextFieldDidChangeEditing:" destination="rca-8Y-uYZ" eventType="editingChanged" id="bCu-ok-rDe"/>
+                                        </connections>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid email address." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypa-eS-Epo">
+                                        <rect key="frame" x="65.5" y="65" width="263" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MLG-gO-kXN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4x-bd-UfA">
-                                        <rect key="frame" x="10" y="65" width="374" height="62"/>
+                                        <rect key="frame" x="10" y="120" width="374" height="104"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
@@ -73,6 +85,10 @@
                         <viewLayoutGuide key="safeArea" id="od9-GY-UY5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Enter Email" id="GKr-bE-Fz9"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="hvf-n5-BSx" id="F8a-CV-4BK"/>
+                        <outlet property="nextButton" destination="r4x-bd-UfA" id="XYu-0E-xsS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLt-eU-4SU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +97,7 @@
         <!--Enter Password-->
         <scene sceneID="Hil-Mi-7pt">
             <objects>
-                <viewController title="Enter Password" id="y2C-Ht-XZp" sceneMemberID="viewController">
+                <viewController title="Enter Password" id="y2C-Ht-XZp" customClass="AddPasswordViewController" customModule="POPinOffWithTesting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ab2-n7-Czs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,26 +105,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VbH-Gq-c7c">
                                 <rect key="frame" x="10" y="301.5" width="394" height="293"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSf-6u-g8n">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSf-6u-g8n">
                                         <rect key="frame" x="10" y="0.0" width="374" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="MwJ-1c-QDP"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged:" destination="y2C-Ht-XZp" eventType="editingChanged" id="is4-6N-5mi"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OTy-vY-kD0">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OTy-vY-kD0">
                                         <rect key="frame" x="10" y="65" width="374" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="uvD-4m-YqF"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged:" destination="y2C-Ht-XZp" eventType="editingChanged" id="gxf-QF-dwZ"/>
+                                        </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwords must be at least ten characters long and contain a special character." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGb-ya-NWV">
-                                        <rect key="frame" x="0.0" y="130" width="394" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passwords must be at least 8 characters long and contain a special character." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGb-ya-NWV">
+                                        <rect key="frame" x="5" y="130" width="384.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="42v-e0-a0x"/>
                                         </constraints>
@@ -144,6 +166,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mzD-gs-Llp"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="OTy-vY-kD0" id="hbE-eV-R9o"/>
+                        <outlet property="nextButton" destination="nZB-bE-5kx" id="UMV-Hc-0Ol"/>
+                        <outlet property="passwordTextField" destination="bSf-6u-g8n" id="gfE-hi-z0I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfa-B1-tI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,13 +179,13 @@
         <!--Enter Credit Card-->
         <scene sceneID="wlz-Ql-hfY">
             <objects>
-                <viewController title="Enter Credit Card" id="fpZ-Mh-CsT" sceneMemberID="viewController">
+                <viewController title="Enter Credit Card" id="fpZ-Mh-CsT" customClass="AddCreditCardViewController" customModule="POPinOffWithTesting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sgG-RH-3Mv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="H6p-tE-5mK">
-                                <rect key="frame" x="10" y="350" width="394" height="196"/>
+                                <rect key="frame" x="10" y="301.5" width="394" height="293"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="credit card #" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qxm-rU-xeP">
                                         <rect key="frame" x="10" y="0.0" width="374" height="60"/>
@@ -168,6 +195,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged:" destination="fpZ-Mh-CsT" eventType="editingChanged" id="Vaz-D0-oiH"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cvv" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RGb-Ry-KTt">
                                         <rect key="frame" x="10" y="65" width="374" height="60"/>
@@ -177,9 +207,21 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldEditingChanged:" destination="fpZ-Mh-CsT" eventType="editingChanged" id="Pgg-dp-IpP"/>
+                                        </connections>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Both fields must be all numbers, with no special characters." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sC-z4-671">
+                                        <rect key="frame" x="13" y="130" width="368" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vfX-Ji-KtK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.34901960780000002" green="0.34901960780000002" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijx-fl-Dka">
-                                        <rect key="frame" x="10" y="130" width="374" height="66"/>
+                                        <rect key="frame" x="10" y="185" width="374" height="108"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
@@ -206,6 +248,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AzU-Kj-AHR"/>
                     </view>
+                    <connections>
+                        <outlet property="creditCardNumberTextField" destination="qxm-rU-xeP" id="8WM-Vm-ybF"/>
+                        <outlet property="cvvTextField" destination="RGb-Ry-KTt" id="5Hz-sZ-L1f"/>
+                        <outlet property="nextButton" destination="Ijx-fl-Dka" id="xug-fK-59U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T1U-ms-eh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

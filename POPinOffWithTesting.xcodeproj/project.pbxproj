@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9D3EF31D2267D6E000393FC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3EF31C2267D6E000393FC1 /* AppDelegate.swift */; };
-		9D3EF31F2267D6E000393FC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3EF31E2267D6E000393FC1 /* ViewController.swift */; };
+		9D3EF31F2267D6E000393FC1 /* AddEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3EF31E2267D6E000393FC1 /* AddEmailViewController.swift */; };
 		9D3EF3222267D6E000393FC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3EF3202267D6E000393FC1 /* Main.storyboard */; };
 		9D3EF3242267D6E100393FC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3EF3232267D6E100393FC1 /* Assets.xcassets */; };
 		9D3EF3272267D6E100393FC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3EF3252267D6E100393FC1 /* LaunchScreen.storyboard */; };
 		9D3EF3322267D6E100393FC1 /* POPinOffWithTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3EF3312267D6E100393FC1 /* POPinOffWithTestingTests.swift */; };
+		9D3EF33D2267E15500393FC1 /* AddPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3EF33C2267E15500393FC1 /* AddPasswordViewController.swift */; };
+		9D3EF33F2267E69600393FC1 /* AddCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3EF33E2267E69600393FC1 /* AddCreditCardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,7 @@
 /* Begin PBXFileReference section */
 		9D3EF3192267D6E000393FC1 /* POPinOffWithTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POPinOffWithTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3EF31C2267D6E000393FC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D3EF31E2267D6E000393FC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9D3EF31E2267D6E000393FC1 /* AddEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailViewController.swift; sourceTree = "<group>"; };
 		9D3EF3212267D6E000393FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D3EF3232267D6E100393FC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D3EF3262267D6E100393FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		9D3EF32D2267D6E100393FC1 /* POPinOffWithTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POPinOffWithTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3EF3312267D6E100393FC1 /* POPinOffWithTestingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPinOffWithTestingTests.swift; sourceTree = "<group>"; };
 		9D3EF3332267D6E100393FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D3EF33C2267E15500393FC1 /* AddPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordViewController.swift; sourceTree = "<group>"; };
+		9D3EF33E2267E69600393FC1 /* AddCreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				9D3EF31C2267D6E000393FC1 /* AppDelegate.swift */,
-				9D3EF31E2267D6E000393FC1 /* ViewController.swift */,
+				9D3EF31E2267D6E000393FC1 /* AddEmailViewController.swift */,
+				9D3EF33C2267E15500393FC1 /* AddPasswordViewController.swift */,
+				9D3EF33E2267E69600393FC1 /* AddCreditCardViewController.swift */,
 				9D3EF3202267D6E000393FC1 /* Main.storyboard */,
 				9D3EF3232267D6E100393FC1 /* Assets.xcassets */,
 				9D3EF3252267D6E100393FC1 /* LaunchScreen.storyboard */,
@@ -197,8 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D3EF31F2267D6E000393FC1 /* ViewController.swift in Sources */,
+				9D3EF31F2267D6E000393FC1 /* AddEmailViewController.swift in Sources */,
 				9D3EF31D2267D6E000393FC1 /* AppDelegate.swift in Sources */,
+				9D3EF33D2267E15500393FC1 /* AddPasswordViewController.swift in Sources */,
+				9D3EF33F2267E69600393FC1 /* AddCreditCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

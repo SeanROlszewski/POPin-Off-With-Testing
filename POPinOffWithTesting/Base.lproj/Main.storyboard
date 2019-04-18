@@ -29,7 +29,7 @@
         <!--Enter Email-->
         <scene sceneID="OEq-SY-EMO">
             <objects>
-                <viewController id="rca-8Y-uYZ" customClass="AddEmailViewController" customModule="POPinOffWithTesting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddEmailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rca-8Y-uYZ" customClass="AddEmailViewController" customModule="POPinOffWithTesting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tVI-1e-APO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,7 +97,7 @@
         <!--Enter Password-->
         <scene sceneID="Hil-Mi-7pt">
             <objects>
-                <viewController title="Enter Password" id="y2C-Ht-XZp" customClass="AddPasswordViewController" customModule="POPinOffWithTesting" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPasswordViewController" title="Enter Password" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y2C-Ht-XZp" customClass="AddPasswordViewController" customModule="POPinOffWithTesting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ab2-n7-Czs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

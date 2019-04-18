@@ -12,7 +12,7 @@
 		9D3EF3222267D6E000393FC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3EF3202267D6E000393FC1 /* Main.storyboard */; };
 		9D3EF3242267D6E100393FC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3EF3232267D6E100393FC1 /* Assets.xcassets */; };
 		9D3EF3272267D6E100393FC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3EF3252267D6E100393FC1 /* LaunchScreen.storyboard */; };
-		9D3EF3322267D6E100393FC1 /* POPinOffWithTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3EF3312267D6E100393FC1 /* POPinOffWithTestingTests.swift */; };
+		9D3EF3322267D6E100393FC1 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3EF3312267D6E100393FC1 /* ViewControllerTests.swift */; };
 		9D3EF33D2267E15500393FC1 /* AddPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3EF33C2267E15500393FC1 /* AddPasswordViewController.swift */; };
 		9D3EF33F2267E69600393FC1 /* AddCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3EF33E2267E69600393FC1 /* AddCreditCardViewController.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +36,7 @@
 		9D3EF3262267D6E100393FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D3EF3282267D6E100393FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D3EF32D2267D6E100393FC1 /* POPinOffWithTestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POPinOffWithTestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D3EF3312267D6E100393FC1 /* POPinOffWithTestingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPinOffWithTestingTests.swift; sourceTree = "<group>"; };
+		9D3EF3312267D6E100393FC1 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		9D3EF3332267D6E100393FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D3EF33C2267E15500393FC1 /* AddPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPasswordViewController.swift; sourceTree = "<group>"; };
 		9D3EF33E2267E69600393FC1 /* AddCreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditCardViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		9D3EF3302267D6E100393FC1 /* POPinOffWithTestingTests */ = {
 			isa = PBXGroup;
 			children = (
-				9D3EF3312267D6E100393FC1 /* POPinOffWithTestingTests.swift */,
+				9D3EF3312267D6E100393FC1 /* ViewControllerTests.swift */,
 				9D3EF3332267D6E100393FC1 /* Info.plist */,
 			);
 			path = POPinOffWithTestingTests;
@@ -214,7 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D3EF3322267D6E100393FC1 /* POPinOffWithTestingTests.swift in Sources */,
+				9D3EF3322267D6E100393FC1 /* ViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

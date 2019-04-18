@@ -16,7 +16,7 @@ class AddPasswordViewController: UIViewController {
         passwordTextField.becomeFirstResponder()
     }
     
-    @IBAction func textFieldEditingChanged(_ sender: Any) {
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         guard let passwordText = passwordTextField.text,
             let confirmPasswordText = confirmPasswordTextField.text else {
                     return

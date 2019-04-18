@@ -1,52 +1,39 @@
 import XCTest
 @testable import POPinOffWithTesting
 
-class POPinOffWithTestingTests: XCTestCase {
+class FormValidatorStub: FormValidator {
+    var formContentsAreValid: Bool!
+    
+    func formContentsAreValid(_ contents: [String]) -> Bool {
+        return formContentsAreValid
+    }
+}
 
+class POPinOffWithTestingTests: XCTestCase {
     var addEmailViewController: AddEmailViewController!
-    var addPasswordViewController: AddPasswordViewController!
+    var formValidatorStub: FormValidatorStub!
     
     override func setUp() {
+        formValidatorStub = FormValidatorStub()
+        
         addEmailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddEmailViewController") as? AddEmailViewController
         addEmailViewController.loadViewIfNeeded()
-        
-        addPasswordViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddPasswordViewController") as? AddPasswordViewController
-        addPasswordViewController.loadViewIfNeeded()
+        addEmailViewController.formValidator = formValidatorStub
     }
     
-    func test_addEmailViewController_emptyFormDisablesButton() {
-        addEmailViewController.emailTextField.text = ""
+    func test_addEmailViewController_invalidFormDisablesButton() {
+        formValidatorStub.formContentsAreValid = false
         
-        addEmailViewController.emailTextFieldDidChangeEditing(addEmailViewController.emailTextField)
+        addEmailViewController.emailTextFieldDidChangeEditing(UITextField())
         
         XCTAssertFalse(addEmailViewController.nextButton.isEnabled)
     }
     
-    func test_addEmailViewController_formWithEmailCharactersEnablesButton() {
-        addEmailViewController.emailTextField.text = "@."
+    func test_addEmailViewController_validFormEnablesButton() {
+        formValidatorStub.formContentsAreValid = true
         
         addEmailViewController.emailTextFieldDidChangeEditing(addEmailViewController.emailTextField)
 
         XCTAssert(addEmailViewController.nextButton.isEnabled)
-    }
-    
-    func test_addPasswordViewController_emptyFormDisablesButton() {
-        addPasswordViewController.passwordTextField.text = ""
-        addPasswordViewController.confirmPasswordTextField.text = ""
-        
-        addPasswordViewController.textFieldEditingChanged(addPasswordViewController.passwordTextField)
-        addPasswordViewController.textFieldEditingChanged(addPasswordViewController.confirmPasswordTextField)
-
-        XCTAssertFalse(addPasswordViewController.nextButton.isEnabled)
-    }
-    
-    func test_addPasswordViewController_formWithMatchingPasswordsOfRightLengthEnablesButton() {
-        addPasswordViewController.passwordTextField.text = "password"
-        addPasswordViewController.confirmPasswordTextField.text = "password"
-        
-        addPasswordViewController.textFieldEditingChanged(addPasswordViewController.passwordTextField)
-        addPasswordViewController.textFieldEditingChanged(addPasswordViewController.confirmPasswordTextField)
-        
-        XCTAssert(addPasswordViewController.nextButton.isEnabled)
     }
 }

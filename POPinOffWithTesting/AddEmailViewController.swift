@@ -4,6 +4,8 @@ class AddEmailViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     
+    lazy var formValidator: FormValidator = AddEmailFormValidator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.isEnabled = false
@@ -14,10 +16,6 @@ class AddEmailViewController: UIViewController {
     }
     
     @IBAction func emailTextFieldDidChangeEditing(_ sender: UITextField) {
-        guard let text = sender.text else {
-            return
-        }
-        
-        nextButton.isEnabled = text.contains("@") && text.contains(".")
+        nextButton.isEnabled = formValidator.formContentsAreValid([sender.text ?? ""])
     }
 }
